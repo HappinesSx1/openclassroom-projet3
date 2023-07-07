@@ -106,15 +106,54 @@ main h2 {
     gap: 15px;
 }
 
+.delay {
+    animation: delay 1s both;
+}
+
+#cas-1 {
+    animation-delay: 0.1s;
+}
+#cas-2 {
+    animation-delay: 0.2s;
+}
+#cas-3 {
+    animation-delay: 0.3s;
+}
+#cas-4 {
+    animation-delay: 0.4s;
+}
+#cas-5 {
+    animation-delay: 0.5s;
+}
+#cas-6 {
+    animation-delay: 0.6s;
+}
+#cas-7 {
+    animation-delay: 0.7s;
+}
+#cas-8 {
+    animation-delay: 0.8s;
+}
+#cas-9 {
+    animation-delay: 0.9s;
+}
+
 .menu-choix {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    height: 70px;
     background: #FFFFFF;
     border-radius: 15px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
     position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.menu-choix:hover .price {
+    padding-right: 50px;
+    transition: 0.5s ease;
 }
 
 .menu-choix:hover .validation {
@@ -122,55 +161,88 @@ main h2 {
 }
 
 .menu-choix:hover .validation i {
-    display: block;
     font-size: 30px;
+    display: block;
+}
+
+.plat-et-prix {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.description {
+    margin-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .description h6 {
     font-size: 1.1rem;
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .description p {
+    display: block;
     font-size: 0.9rem;
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.price {
+    margin-right: 20px;
 }
 
 .validation {
-    background: #99E2D0;
     position: absolute;
+    background: #99E2D0;
     height: 100%;
-    width: 0;
     right: 0;
+    width: 0;
     border-radius: 0 15px 15px 0;
     transition: 0.6s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: slider 0.5s ease;
 }
 
 .validation i {
     display: none;
     font-size: 0;
     animation: rotate 0.5s both;
-}
-
-@keyframes slider {
-    0% {
-        transform: scaleX(0);
-    }
-    100% {
-        transform: scaleX(-50px);
-    }
+    animation-delay: 0.2s;
+    color: #FFFFFF;
 }
 
 @keyframes rotate {
     0% {
-              transform: rotate(0);
+        transform: rotate(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes delay {
+    0% {
+        opacity: 0;
     }
     100% {
-              transform: rotate(360deg);
+        opacity: 1;
     }
-  }
+}
 
 @media (max-width: 1100px) {
     .menu {

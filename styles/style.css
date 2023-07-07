@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @font-face {
     font-family: logoFont;
     src: url(../assets/fonts/Shrikhand-Regular.ttf);
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 
 * {
@@ -266,18 +266,37 @@ main {
     justify-content: space-between;
 }
 
+.block-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block-right:hover .coeur-plein {
+    opacity: 1;
+}
+
+.block-right:hover .coeur-vide {
+   stroke: none;
+}
+
 .coeur-plein{
+    opacity: 0;
     position: absolute;
     stroke: none;
+    fill: url(#text-fill);
+    width: 30px;
+    stroke-width: 30;
+    transition: all 0.4s ease;
 }
 
 .coeur-vide {
-    color: linear-gradient(180deg, #ff79da 0%, #9356dc 100%);
     width: 30px;
     stroke-width: 30;
     stroke: black;
     fill: white;
     cursor: pointer;
+    transition: all 0.4s ease;
 }
 
 @media (max-width : 750px) {
